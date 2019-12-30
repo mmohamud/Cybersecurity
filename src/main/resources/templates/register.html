@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Online Phonebook</title>
+    </head>       
+    <body>
+        <h1>Register</h1>
+        
+        <form action="#" th:action="@{/register}" method="POST">
+            <p><label for="Username">Username</label>: <input type="text" name="username" id="username"/></p>
+            <p><label for="Password">Password</label>: <input type="password" name="password" id="password"/></p>
+            <p><input type="submit" value="Register" /></p>
+            
+        </form>
+    </body>
+</html>

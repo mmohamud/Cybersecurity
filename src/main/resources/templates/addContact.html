@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add Contact</title>
+    </head>       
+    <body>
+        <h1>Add Contact</h1>
+        
+        <form th:action="@{/{id}/contacts/addContact (id=${session.user.id})}" method="POST">
+            <p><label for="Name">Name</label>: <input type="text" name="name" id="name"/></p> 
+            <p><label for="Number">Number</label>: <input type="text" name="number" id="number"/></p>            
+            <p><input type="submit" value="Add" /></p>
+            
+        </form>
+    </body>
+</html>

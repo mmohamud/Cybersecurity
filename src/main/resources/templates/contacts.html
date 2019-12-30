@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Contacts</title>
+    </head>
+    <body>
+
+        <div th:if="${session.user}">
+        <h1>Contacts</h1>
+        </div>
+        
+        <form th:action="@{/{id}/contacts/addContact (id=${session.user.id})}" method="GET">
+            <button type="submit">Add contact</button>
+        </form>
+        <ul>
+        <li th:each="contact:${contacts}">              
+                <span th:text="${contact.name}"/>  
+                <span th:text="${contact.number}"/>
+                <br/>                             
+            </li>
+        </ul>
+        <form th:action="@{/{id}/changepassword (id=${session.user.id})}" method="GET">
+            <button type="submit">Change password</button>
+        </form>
+        
+        <form th:action="@{/logout}" method="GET">
+            <button type="submit">Log out</button>
+        </form>
+    </body>
+</html>
